@@ -1,4 +1,4 @@
-from app.repositories.user_repository import add_user, get_user_by_username
+from app.repositories.user_repositoy import add_user, get_user_by_username
 from app.models.user import User
 
 def register_user(username, password):

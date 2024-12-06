@@ -6,7 +6,7 @@ def add_event(event):
     db.session.add(event)
     db.sessio.commit()
         
-def det_all_events():
+def get_all_events():
     return Event.query.all()
 
      

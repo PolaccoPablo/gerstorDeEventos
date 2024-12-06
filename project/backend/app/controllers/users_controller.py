@@ -3,6 +3,10 @@ from app.services.user_service import register_user, authenticate_user
 
 user_bp = Blueprint('user', __name__)
 
+@user_bp.route('/', methods=['GET']) 
+def get_events(): 
+    return "Hello from user"
+
 @user_bp.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
