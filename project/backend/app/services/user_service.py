@@ -13,3 +13,8 @@ def authenticate_user(username, password):
     if user and user.password == password:
         return user
     return None
+
+def infoUsuario(user_name):
+    return get_user_by_username(user_name)
+
+

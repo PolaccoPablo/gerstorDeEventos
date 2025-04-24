@@ -6,6 +6,6 @@ def add_user(user):
     db.session.commit()
     
 def get_user_by_username(username):
-    return User.query.filter_by(username=username).frist()
+    return User.query.filter_by(username=username).first()
 
     

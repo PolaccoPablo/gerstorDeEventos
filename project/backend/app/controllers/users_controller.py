@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from app.services.user_service import register_user, authenticate_user
+from app.services.user_service import register_user, authenticate_user, infoUsuario
 
 user_bp = Blueprint('user', __name__)
 
@@ -22,3 +22,16 @@ def login():
     if user:
         return jsonify({'message': 'Login successful!'})
     return jsonify({'message': 'Invalid credentials'}), 401
+
+@user_bp.route('/info/<username>', methods=['GET']) 
+def user_info(username):
+    user = infoUsuario(username)
+    
+    if user:
+        return jsonify({
+           "id":user.id,
+            "username": user.username,
+            "password": user.password
+            }), 200
+    else: 
+        return jsonify({"messege":"User not found"}), 400
